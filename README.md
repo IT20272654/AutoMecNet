@@ -8,7 +8,7 @@ AutoMecNet is a Social Learning Management System (LMS) built for individuals pa
 - Feed displaying shared posts about automobiles
 - Upload and share automotive knowledge
 - Comment and engage with others’ content
-- Mobile-friendly, responsive design
+- User friendly design
 
 ## Tech Stack
 
