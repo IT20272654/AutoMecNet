@@ -3,11 +3,11 @@ package backend.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -16,13 +16,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // Disable CSRF protection
-                .csrf(AbstractHttpConfigurer::disable)
-
-                // Configure CORS
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-
-                // Configure authorization
+                .csrf().disable()
+                .cors().and() // Enable CORS
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/login/**",
@@ -30,29 +25,26 @@ public class SecurityConfig {
                                 "/user/**",
                                 "/posts/**",
                                 "/media/**",
-                                "/learningSystem/**"
+                                "/learningSystem/**", // Allow public access to learning system endpoints
+                                "/learningProgress/**", // Allow public access to add learning progress
+                                "/notifications/**" // Allow public access to notifications
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
-
-                // Configure OAuth2 login
                 .oauth2Login(oauth2 -> oauth2
                         .defaultSuccessUrl("/oauth2/success", true)
                 );
-
         return http.build();
     }
 
     @Bean
-    public UrlBasedCorsConfigurationSource corsConfigurationSource() {
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedOrigin("http://localhost:3000"); // Allow requests from the frontend
         config.addAllowedMethod("*"); // Allow all HTTP methods
         config.addAllowedHeader("*"); // Allow all headers
-        config.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
-        return source;
+        return new CorsFilter(source);
     }
 }

@@ -2,7 +2,9 @@ package backend.controller;
 
 import backend.exception.PostManagementNotFoundException;
 import backend.model.Comment;
+import backend.model.NotificationModel;
 import backend.model.PostManagementModel;
+import backend.repository.NotificationRepository;
 import backend.repository.PostManagementRepository;
 import backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,8 @@ public class PostManagementController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private NotificationRepository notificationRepository;
 
     @Value("${media.upload.dir}")
     private String uploadDir;
@@ -208,7 +212,8 @@ public class PostManagementController {
                                 .orElse("Someone");
                         String message = String.format("%s liked your %s post", userFullName, post.getTitle());
                         String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
+                        NotificationModel notification = new NotificationModel(post.getUserID(), message, false, currentDateTime);
+                        notificationRepository.save(notification);
                     }
 
                     return ResponseEntity.ok(post);
@@ -241,7 +246,8 @@ public class PostManagementController {
                     if (!userID.equals(post.getUserID())) {
                         String message = String.format("%s commented on your post: %s", userFullName, post.getTitle());
                         String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
+                        NotificationModel notification = new NotificationModel(post.getUserID(), message, false, currentDateTime);
+                        notificationRepository.save(notification);
                     }
 
                     return ResponseEntity.ok(post);

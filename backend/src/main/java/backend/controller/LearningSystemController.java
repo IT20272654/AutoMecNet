@@ -4,7 +4,9 @@ import backend.exception.LearningSystemNotFoundException;
 import backend.exception.UserNotFoundException;
 import backend.model.Comment;
 import backend.model.LearningSystemModel;
+import backend.model.NotificationModel;
 import backend.repository.LearningSystemRepository;
+import backend.repository.NotificationRepository;
 import backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -23,6 +26,8 @@ public class LearningSystemController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private NotificationRepository notificationRepository;
 
     //Insert
     @PostMapping("/learningSystem")
@@ -92,7 +97,8 @@ public class LearningSystemController {
                                 .orElse("Someone");
                         String message = String.format("%s liked your %s post", userFullName, post.getTitle());
                         String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
+                        NotificationModel notification = new NotificationModel(post.getPostOwnerID(), message, false, currentDateTime);
+                        notificationRepository.save(notification);
                     }
 
                     return post;
@@ -117,7 +123,8 @@ public class LearningSystemController {
                     if (!comment.getUserID().equals(post.getPostOwnerID())) {
                         String message = String.format("%s commented on your  %s  post", userFullName, post.getTitle());
                         String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
+                        NotificationModel notification = new NotificationModel(post.getPostOwnerID(), message, false, currentDateTime);
+                        notificationRepository.save(notification);
                     }
 
                     return post;
