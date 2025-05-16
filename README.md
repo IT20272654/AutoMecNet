@@ -33,4 +33,7 @@ AutoMecNet is a Social Learning Management System (LMS) built for individuals pa
 - Java 24
 - Maven 
 
+![Screenshot 2025-05-16 154418](https://github.com/user-attachments/assets/e4c91135-0f99-4b50-ba5d-964b2d591b21)
+![Screenshot 2025-05-16 154339](https://github.com/user-attachments/assets/5b1ee29a-8d7b-4696-88a0-4956ad4e3622)
+
 
