@@ -1,7 +1,9 @@
 package backend.controller;
 
 import backend.exception.UserNotFoundException;
+import backend.model.NotificationModel;
 import backend.model.UserModel;
+import backend.repository.NotificationRepository;
 import backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,8 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private NotificationRepository notificationRepository;
 
     //Insert
     @PostMapping("/user")
@@ -111,7 +115,8 @@ public class UserController {
                     .orElse("Someone");
             String message = String.format("%s started following you.", followerFullName);
             String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
+            NotificationModel notification = new NotificationModel(followUserID, message, false, currentDateTime);
+            notificationRepository.save(notification);
 
             return ResponseEntity.ok(Map.of("message", "User followed successfully"));
         }).orElseThrow(() -> new UserNotFoundException("User not found: " + userID));
