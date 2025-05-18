@@ -12,8 +12,10 @@ import {
     Send,
     AlertCircle
 } from 'lucide-react';
-import SideBar from '../../Components/SideBar/SideBar';
 import './AddLearningPost.css';
+import NavBar from '../../Components/NavBar/NavBar';
+
+
 
 function AddLeariningPost() {
   const [title, setTitle] = useState('');
@@ -71,7 +73,7 @@ function AddLeariningPost() {
 
   return (
     <div className="add-learning-container">
-      <SideBar />
+      <NavBar />
       <div className="add-learning-content">
         <div className="form-container">
           <h1 className="form-title">
