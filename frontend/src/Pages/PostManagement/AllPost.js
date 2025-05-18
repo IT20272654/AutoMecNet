@@ -305,10 +305,10 @@ function AllPost() {
                     </div>
                     <div className="post-user-info">
                       <div className="post-user-name">{postOwners[post.userID] || 'Anonymous'}</div>
-                      <div className="post-date">
+                      {/* <div className="post-date">
                         <Clock size={14} color="#102E50" />
                         {new Date(post.createdAt).toLocaleDateString()}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   
@@ -401,10 +401,10 @@ function AllPost() {
                       <span>{post.comments?.length || 0}</span>
                     </button>
                     
-                    <button className="post-action-btn">
+                    {/* <button className="post-action-btn">
                       <Share size={18} />
                       <span>Share</span>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
                 
