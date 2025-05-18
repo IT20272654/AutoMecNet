@@ -1,0 +1,137 @@
+.continer {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+}
+
+.continSection {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 250px;
+    padding-top: 80px;
+}
+
+.from_continer {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.Auth_heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #102E50;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.Auth_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.Auth_formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.Auth_label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.Auth_input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    background-color: #f9fafb;
+}
+
+.Auth_input:focus {
+    outline: none;
+    border-color: #102E50;
+    box-shadow: 0 0 0 3px rgba(16, 46, 80, 0.1);
+    background-color: white;
+}
+
+.skil_dis_con {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.skil_name {
+    background-color: #102E50;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skil_addbtn {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.add_s_btn {
+    background-color: #102E50;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_s_btn:hover {
+    background-color: #1a3a5f;
+    transform: scale(1.05);
+}
+
+.Auth_button {
+    background-color: #102E50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.Auth_button:hover {
+    background-color: #1a3a5f;
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .continSection {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .from_continer {
+        padding: 1.5rem;
+    }
+} 

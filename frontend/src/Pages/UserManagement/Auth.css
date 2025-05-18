@@ -1,0 +1,348 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f1a2e 0%, #1a3a5f 100%);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    animation: gradientBG 15s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.auth-inner-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.auth-image {
+    flex: 1.2;
+    background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.auth-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(16, 46, 80, 0.9) 0%, rgba(26, 58, 95, 0.8) 100%);
+}
+
+.auth-content {
+    flex: 1;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-logo {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #102E50 0%, #1a3a5f 100%);
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.auth-logo:hover {
+    transform: translateY(-2px);
+}
+
+.auth-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #102E50;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    animation: fadeInUp 0.6s ease;
+}
+
+.auth-subheading {
+    color: #6b7280;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeInUp 0.6s ease 0.2s backwards;
+}
+
+.auth-form-group {
+    position: relative;
+}
+
+.auth-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f9fafb;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #102E50;
+    box-shadow: 0 0 0 4px rgba(16, 46, 80, 0.1);
+    background-color: white;
+}
+
+.auth-button {
+    background: linear-gradient(135deg, #102E50 0%, #1a3a5f 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 46, 80, 0.2);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+.auth-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.auth-google-button {
+    background: white;
+    color: #374151;
+    padding: 1rem 2rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.auth-google-button:hover {
+    background: #f9fafb;
+    border-color: #102E50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 46, 80, 0.1);
+}
+
+.auth-google-button img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.auth-google-button:hover img {
+    transform: scale(1.1);
+}
+
+.auth-signup-prompt {
+    text-align: center;
+    margin-top: 2rem;
+    color: #6b7280;
+    animation: fadeInUp 0.6s ease 0.3s backwards;
+}
+
+.auth-signup-link {
+    color: #102E50;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.auth-signup-link:hover {
+    color: #1a3a5f;
+    gap: 0.5rem;
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, #102E50 0%, #1a3a5f 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.skill-input-group input {
+    flex: 1;
+}
+
+.add-skill-button {
+    background: linear-gradient(135deg, #102E50 0%, #1a3a5f 100%);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-skill-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .auth-inner-container {
+        max-width: 900px;
+    }
+    
+    .auth-content {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 1.5rem;
+    }
+
+    .auth-inner-container {
+        flex-direction: column;
+    }
+
+    .auth-image {
+        display: none;
+    }
+
+    .auth-content {
+        padding: 2rem;
+    }
+
+    .auth-heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 1rem;
+    }
+
+    .auth-content {
+        padding: 1.5rem;
+    }
+
+    .auth-heading {
+        font-size: 1.75rem;
+    }
+
+    .auth-form-group {
+        margin-bottom: 1rem;
+    }
+
+    .auth-button,
+    .auth-google-button {
+        padding: 0.875rem 1.5rem;
+    }
+}
