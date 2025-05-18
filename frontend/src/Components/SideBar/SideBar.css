@@ -1,0 +1,126 @@
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+}
+
+.side_bar {
+    position: fixed;
+    background: linear-gradient(180deg, #102E50 0%, #1a3a5f 100%);
+    width: 280px;
+    height: 100vh;
+    padding: 100px 0 32px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 4px 0 12px rgba(16, 46, 80, 0.1);
+}
+
+.side_bar_nav_item_con {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 16px;
+}
+
+.side_bar_nav_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 500;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.side_bar_nav_item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateX(4px);
+}
+
+.side_bar_nav_item--active {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: 600;
+}
+
+.side_bar_nav_item--active .nav-icon {
+    color: #4A90E2;
+}
+
+.nav-icon {
+    transition: all 0.3s ease;
+}
+
+.side_bar_nav_item:hover .nav-icon {
+    transform: scale(1.1);
+    color: #4A90E2;
+}
+
+.sidebar-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 24px 0;
+}
+
+.sidebar-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.sidebar-bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 500;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.sidebar-bottom-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateX(4px);
+}
+
+.sidebar-bottom-item:hover .nav-icon {
+    transform: scale(1.1);
+    color: #4A90E2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .side_bar {
+        width: 240px;
+    }
+    
+    .side_bar_nav_item {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .nav-icon {
+        size: 18px;
+    }
+}
