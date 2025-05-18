@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Upload, Image as ImageIcon, Video as VideoIcon, X, Plus, Send, Type, FileText, Loader } from 'lucide-react';
 import SideBar from '../../Components/SideBar/SideBar';
 import './AddNewPost.css';
+import NavBar from '../../Components/NavBar/NavBar';
 
 function AddNewPost() {
   const [title, setTitle] = useState('');
@@ -100,7 +101,7 @@ function AddNewPost() {
 
   return (
     <div className="add-post-container">
-      <SideBar />
+      <NavBar />
       <div className="add-post-content">
         <div className="add-post-card">
           <div className="add-post-header">
@@ -145,7 +146,7 @@ function AddNewPost() {
                 <div className="media-upload-text">
                   <strong>Click to upload</strong> or drag and drop
                   <br />
-                  Images or videos (max 5 files)
+                  Images or videos (max 3 files)
                 </div>
               </label>
               <input

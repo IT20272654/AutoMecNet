@@ -64,7 +64,7 @@ function NavBar() {
                         className={`${styles.navLink} ${isActive('/learningSystem/allLearningPost') ? styles.navLinkActive : ''}`}
                     >
                         <BookOpen size={18} className={styles.navIcon} />
-                        <span>EduStream</span>
+                        <span>AutoEdu</span>
                     </Link>
                     <Link 
                         to="/allPost" 
@@ -73,13 +73,13 @@ function NavBar() {
                         <MessageSquare size={18} className={styles.navIcon} />
                         <span>BoostPost</span>
                     </Link>
-                    <Link 
+                    {/* <Link 
                         to="/about" 
                         className={`${styles.navLink} ${isActive('/about') ? styles.navLinkActive : ''}`}
                     >
                         <Info size={18} className={styles.navIcon} />
                         <span>About Us</span>
-                    </Link>
+                    </Link> */}
                 </div>
 
                 <div className={styles.userControls}>
