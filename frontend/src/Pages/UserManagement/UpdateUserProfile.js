@@ -3,6 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import SideBar from '../../Components/SideBar/SideBar';
 import { IoMdAdd } from "react-icons/io";
 import './UpdateUserProfile.css';
+import NavBar from '../../Components/NavBar/NavBar';
+
+
 function UpdateUserProfile() {
   const { id } = useParams();
   const [formData, setFormData] = useState({
@@ -66,7 +69,7 @@ function UpdateUserProfile() {
   return (
     <div>
       <div className='continer'>
-        <div><SideBar /></div>
+      <NavBar />
         <div className='continSection'>
           <div className="from_continer">
             <p className="Auth_heading">Update User Profile</p>
