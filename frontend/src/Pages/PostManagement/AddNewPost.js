@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Upload, Image as ImageIcon, Video as VideoIcon, X, Plus, Send, Type, FileText, Loader } from 'lucide-react';
-import SideBar from '../../Components/SideBar/SideBar';
+import { Upload, Image as  X, Plus, Send, Type, FileText, Loader } from 'lucide-react';
 import './AddNewPost.css';
 import NavBar from '../../Components/NavBar/NavBar';
 
