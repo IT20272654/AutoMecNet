@@ -6,6 +6,22 @@
   padding-top: 80px;
 }
 
+.posts-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.posts-header-title h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #143D60;
+}
+
+.posts-header-title svg {
+  color: #143D60;
+}
+
 .posts-controls {
   display: flex;
   justify-content: flex-end;
