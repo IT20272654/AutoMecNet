@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { 
-  MessageCircle, Edit, Trash2, ThumbsUp, Plus, 
-  User, MessageSquare, X, Save, Heart, Share, Clock, UserCheck, UserPlus
+  MessageCircle, Edit, Trash2, Plus, 
+  User, MessageSquare, X, Save, Heart, UserCheck, UserPlus
 } from 'lucide-react';
 import Modal from 'react-modal';
 import './PostManagement.css';
@@ -249,7 +249,6 @@ function AllPost() {
       <main>
         <div className="posts-header">
           <div className="posts-header-title">
-            <MessageSquare size={24} color="#102E50" />
             <h1 style={{ color: "#102E50" }}>BoostPost</h1>
           </div>
           <div className="posts-actions">

@@ -111,7 +111,9 @@ function AllLearningPost() {
   return (
     <div className="learning-posts-container">
       <NavBar />
-      
+      <div className="posts-header">  
+        <h1 style={{ color: "#102E50" }}>AutoEdu</h1>
+      </div>    
       <div className="posts-controls">
         <button
           className={`filter-button ${showingMyPosts ? 'active' : ''}`}
